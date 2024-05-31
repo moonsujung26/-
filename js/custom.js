@@ -45,8 +45,6 @@ $(function () {
   $('.product_silde').slick({
 
     slidesToShow: 4,
-    autoplay: true,
-    autoplaySpeed: 1000,
     pauseOnHover: false,
     arrows: false
 
