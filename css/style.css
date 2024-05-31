@@ -272,6 +272,57 @@
   transform: rotate(135deg);
 }
 
+.scroll_down {
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 42px;
+  height: 64px;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.scroll_down .arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(45deg);
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  width: 15px;
+  height: 15px;
+  border-top: none;
+  border-left: none;
+  animation: scrolldown 1s ease-in-out infinite;
+}
+
+.scroll_down .arrow::after {
+
+  animation-delay: 0.3s;
+  top: 30%;
+
+}
+
+@keyframes scrolldown {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    top: 90%;
+  }
+}
 
 
 /* -메인 슬라이드끝- */
@@ -281,16 +332,22 @@
   margin: 5px;
   gap: 5px;
   position: relative;
-
+  overflow: hidden;
 }
 
 .main_banner figure {
-
+  flex: 1;
   position: relative;
-
+  overflow: hidden;
 }
 
-.main_banner figure img:hover {}
+.main_banner figure:hover img {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+
+
 
 .main_banner .slg {
 

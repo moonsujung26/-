@@ -13,9 +13,9 @@ $(function () {
   $('.main_visual .main_slide ').on('init afterChange', function () {
     const current = $('.main_visual .main_slide .slick-current');
     current
-    .addClass('on')
-    .siblings()
-    .removeClass('on');
+      .addClass('on')
+      .siblings()
+      .removeClass('on');
 
   });//글자 애니메이션//
 
@@ -29,6 +29,17 @@ $(function () {
     fade: true,
     pauseOnHover: false
   });
+
+  function handleScroll() {
+    var scrollDown = document.querySelector('.scroll_down');
+    if (window.scrollY > 0) {
+      scrollDown.style.display = 'none'
+    } else {
+      scrollDown.style.display = 'block'
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll)
 
 
   $('#bgndVideo').YTPlayer({
